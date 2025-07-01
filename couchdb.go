@@ -411,7 +411,7 @@ func (db *Database) ListDesignDocs(ctx context.Context) (*ViewResult, error) {
 	var result ViewResult
 	resp, err := db.client.resty.R().
 		SetContext(ctx).
-		SetQueryParam("startkey", `"_design/""`).
+		SetQueryParam("startkey", `"_design/"`).
 		SetQueryParam("endkey", `"_design0"`).
 		SetResult(&result).
 		Get("/" + db.name + "/_all_docs")
